@@ -84,7 +84,7 @@ services:
         icingacli director daemon run
     entrypoint: []
     logging: *default-logging
-    image: icinga/icingaweb2
+    image: vyvuvivo/icingaweb2:v1
     restart: on-failure
     volumes:
       - icingaweb:/data
