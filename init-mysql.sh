@@ -1,5 +1,5 @@
 #!/bin/sh -x
-source .env
+source ./.env
 create_database_and_user() {
     DB=$1
     USER=$2

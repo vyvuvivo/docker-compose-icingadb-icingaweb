@@ -2,7 +2,7 @@
 
 set -e
 set -o pipefail
-source .env
+source ./.env
 
 # Create api-user
 if [ ! -f /etc/icinga2/conf.d/icingaweb-api-user.conf ]; then
