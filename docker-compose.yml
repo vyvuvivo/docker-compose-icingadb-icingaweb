@@ -77,7 +77,7 @@ services:
       icingaweb.enabledModules: icingadb, incubator
       <<: [*icinga-db-web-config, *icinga-web-config]
     logging: *default-logging
-    image: icinga/icingaweb2
+    image: vyvuvivo/icingaweb2:v1
     ports:
       - 8080:8080
     # Restart Icinga Web container automatically since we have to wait for the database to be ready.
