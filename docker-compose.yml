@@ -21,15 +21,15 @@ x-icinga-db-web-config:
 x-icinga-director-config:
   &icinga-director-config
   icingaweb.modules.director.config.db.resource: director-mysql
-  icingaweb.modules.director.kickstart.config.endpoint: icinga2
-  icingaweb.modules.director.kickstart.config.host: icinga2
+  icingaweb.modules.director.kickstart.config.endpoint: ${ICINGA_ENDPOINT}
+  icingaweb.modules.director.kickstart.config.host: ${ICINGA_HOST}
   icingaweb.modules.director.kickstart.config.port: 5665
   icingaweb.modules.director.kickstart.config.username: icingaweb
   icingaweb.modules.director.kickstart.config.password: ${ICINGAWEB_ICINGA2_API_USER_PASSWORD:-icingaweb}
   icingaweb.resources.director-mysql.charset: utf8mb4
   icingaweb.resources.director-mysql.db: mysql
   icingaweb.resources.director-mysql.dbname: director
-  icingaweb.resources.director-mysql.host: mysql
+  icingaweb.resources.director-mysql.host: ${VIP_DATABASE_HOST}
   icingaweb.resources.director-mysql.password: ${ICINGA_DIRECTOR_MYSQL_PASSWORD:-director}
   icingaweb.resources.director-mysql.type: db
   icingaweb.resources.director-mysql.username: director
