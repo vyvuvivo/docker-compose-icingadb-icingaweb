@@ -12,5 +12,5 @@ GRANT ALL ON ${DB}.* TO '${USER}'@'%';
 EOS
 }
 
-create_database_and_user icingadb icingadb ${ICINGADB_MYSQL_PASSWORD}
-create_database_and_user icingaweb icingaweb ${ICINGAWEB_MYSQL_PASSWORD}
+create_database_and_user icingadb icingadb ${ICINGADB_MYSQL_PASSWORD:-icingadb}
+create_database_and_user icingaweb icingaweb ${ICINGAWEB_MYSQL_PASSWORD:-icingaweb}
