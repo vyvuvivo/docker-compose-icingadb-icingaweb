@@ -10,6 +10,10 @@ if [ ! -f /etc/icinga2/conf.d/icingaweb-api-user.conf ]; then
 fi
 
 # Icingadb feature
+/usr/sbin/icinga2 feature enable icingadb
+
 if [ ! -f /etc/icinga2/features-enabled/icingadb.conf ]; then
   sed "s/\$ICINGA_HOST/${ICINGA_HOST:-localhost}/" ./icingadb.conf > /etc/icinga2/features-enabled/icingadb.conf
 fi
+
+systemctl restart icinga2
