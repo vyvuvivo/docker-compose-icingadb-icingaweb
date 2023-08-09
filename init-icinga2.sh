@@ -13,7 +13,7 @@ fi
 /usr/sbin/icinga2 feature enable icingadb
 
 if [ ! -f /etc/icinga2/features-enabled/icingadb.conf ]; then
-  sed "s/\$ICINGA_HOST/${ICINGA_HOST:-localhost}/" ./icingadb.conf > /etc/icinga2/features-enabled/icingadb.conf
+  sed "s/\$REDIS_HOST/${REDIS_HOST:-localhost}/" ./icingadb.conf > /etc/icinga2/features-enabled/icingadb.conf
 fi
 
 systemctl restart icinga2
