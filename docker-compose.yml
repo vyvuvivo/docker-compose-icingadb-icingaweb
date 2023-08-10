@@ -74,12 +74,12 @@ services:
       - /bin/bash
       - -ce
       - |
-        echo "Testing the database connection. Container could restart."
-        (echo > /dev/tcp/mysql/3306) >/dev/null 2>&1
-        echo "Testing the Icinga 2 API connection. Container could restart."
-        (echo > /dev/tcp/icinga2/5665) >/dev/null 2>&1
-        icingacli director migration run
-        (icingacli director kickstart required && icingacli director kickstart run && icingacli director config deploy) || true
+        # echo "Testing the database connection. Container could restart."
+        # (echo > /dev/tcp/mysql/3306) >/dev/null 2>&1
+        # echo "Testing the Icinga 2 API connection. Container could restart."
+        # (echo > /dev/tcp/icinga2/5665) >/dev/null 2>&1
+        # icingacli director migration run
+        # (icingacli director kickstart required && icingacli director kickstart run && icingacli director config deploy) || true
         echo "Starting Icinga Director daemon."
         icingacli director daemon run
     entrypoint: []
