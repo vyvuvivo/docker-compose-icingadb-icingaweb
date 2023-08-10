@@ -1,5 +1,4 @@
 # Exclude all hidden files
 .*
-.env
 # Except those related to Git (and GitHub)
 !.git*
