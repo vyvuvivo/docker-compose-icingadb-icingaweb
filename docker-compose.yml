@@ -111,7 +111,7 @@ services:
 
   icingaweb:
     environment:
-      icingaweb.enabledModules: icingadb, incubator, director, grafana
+      icingaweb.enabledModules: icingadb, incubator, director
       <<: [*icinga-db-web-config, *icinga-web-config, *icinga-director-config]
     logging: *default-logging
     image: vyvuvivo/icingaweb2:v1
@@ -123,8 +123,8 @@ services:
     volumes:
       - icingaweb:/data
       - ./http-icingaweb2.conf:/etc/apache2/conf-enabled/icingaweb2.conf
-      - ./grafana-config.ini:/etc/icingaweb2/modules/grafana/config.ini
-      - ./grafana-graphs.ini:/etc/icingaweb2/modules/grafana/graphs.ini
+      # - ./grafana-config.ini:/etc/icingaweb2/modules/grafana/config.ini
+      # - ./grafana-graphs.ini:/etc/icingaweb2/modules/grafana/graphs.ini
 
 volumes:
   icingaweb:
