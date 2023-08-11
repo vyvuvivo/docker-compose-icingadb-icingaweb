@@ -123,6 +123,8 @@ services:
     volumes:
       - icingaweb:/data
       - ./http-icingaweb2.conf:/etc/apache2/conf-enabled/icingaweb2.conf
+      - ./grafana-config.ini:/etc/icingaweb2/modules/grafana/config.ini
+      - ./grafana-graphs.ini:/etc/icingaweb2/modules/grafana/graphs.ini
 
 volumes:
   icingaweb:
