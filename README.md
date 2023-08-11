@@ -4,7 +4,7 @@ cp env-template .env
 
 2. Create database: icingadb, icingaweb, director
 ./init-mysql.sh
-3. Create api user & enable icingadb feature
+3. Create api user & enable icingadb feature & grafana module config
 ./init-icinga2.sh
 
 
