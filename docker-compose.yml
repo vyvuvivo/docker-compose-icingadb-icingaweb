@@ -111,7 +111,7 @@ services:
 
   icingaweb:
     environment:
-      icingaweb.enabledModules: icingadb, incubator, director
+      icingaweb.enabledModules: icingadb, incubator, director, grafana
       <<: [*icinga-db-web-config, *icinga-web-config, *icinga-director-config]
     logging: *default-logging
     image: vyvuvivo/icingaweb2:v1
