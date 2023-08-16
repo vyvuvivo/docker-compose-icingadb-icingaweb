@@ -85,7 +85,7 @@ services:
     entrypoint: []
     logging: *default-logging
     image: vyvuvivo/icingaweb2:v1
-    restart: on-failure
+    restart: always
     volumes:
       - icingaweb:/data
 
@@ -101,10 +101,12 @@ services:
     depends_on:
       - icingadb-redis
     image: icinga/icingadb
+    restart: always
     logging: *default-logging
 
   icingadb-redis:
     image: redis
+    restart: always
     ports:
       - 6379:6379
     logging: *default-logging
@@ -119,9 +121,10 @@ services:
       - 8080:8080
     # Restart Icinga Web container automatically since we have to wait for the database to be ready.
     # Please note that this needs a more sophisticated solution.
-    restart: on-failure
+    restart: always
     volumes:
       - icingaweb:/data
+      - icingaweb:/usr/share/icingaweb2/modules
       - ./http-icingaweb2.conf:/etc/apache2/conf-enabled/icingaweb2.conf
       # - ./grafana-config.ini:/etc/icingaweb2/modules/grafana/config.ini
       # - ./grafana-graphs.ini:/etc/icingaweb2/modules/grafana/graphs.ini
