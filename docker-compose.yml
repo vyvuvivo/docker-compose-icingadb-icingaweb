@@ -102,6 +102,8 @@ services:
       - icingadb-redis
     image: icinga/icingadb
     restart: always
+    volumes:
+      - icingadb:/usr/share/icingadb/
     logging: *default-logging
 
   icingadb-redis:
@@ -124,10 +126,12 @@ services:
     restart: always
     volumes:
       - icingaweb:/data
-      - icingaweb:/usr/share/icingaweb2/modules
+      - icingaweb-module:/usr/share/icingaweb2/modules
       - ./http-icingaweb2.conf:/etc/apache2/conf-enabled/icingaweb2.conf
       # - ./grafana-config.ini:/etc/icingaweb2/modules/grafana/config.ini
       # - ./grafana-graphs.ini:/etc/icingaweb2/modules/grafana/graphs.ini
 
 volumes:
   icingaweb:
+  icingaweb-module:
+  icingadb:
