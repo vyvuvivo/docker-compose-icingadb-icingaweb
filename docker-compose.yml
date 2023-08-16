@@ -102,8 +102,6 @@ services:
       - icingadb-redis
     image: icinga/icingadb
     restart: always
-    volumes:
-      - icingadb:/usr/share/icingadb/
     logging: *default-logging
 
   icingadb-redis:
@@ -134,4 +132,3 @@ services:
 volumes:
   icingaweb:
   icingaweb-module:
-  icingadb:
