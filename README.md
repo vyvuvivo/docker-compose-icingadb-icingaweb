@@ -1,3 +1,4 @@
+Clone from https://github.com/lippserd/docker-compose-icinga
 # prerequisites
 1. Chage configure in .env file
 `cp env-template .env`
